@@ -32,6 +32,7 @@ async function createWelcomeImages(
   groupName,
   countMember,
   userPhone,
+  username,
   userProfile,
   tagline
 ) {
@@ -91,7 +92,7 @@ async function createWelcomeImages(
   ctx.font = "italic bold 25px Arial";
   wrapText(
     ctx,
-    phone,
+    username,
     boxX + boxWidth / 2,
     boxY + boxHeight / 2,
     boxWidth - 20,
@@ -119,6 +120,8 @@ module.exports = async (chiwa, update) => {
     let userJid = update.participants[0];
     let phoneNumber = userJid.split("@")[0];
 
+    const username = chiwa.getName(userJid, true);
+
     // get user profile
     let profile = path.join(__dirname, "../../assets/img/user-profile.jpg");
 
@@ -142,6 +145,7 @@ module.exports = async (chiwa, update) => {
       groupName,
       countMember,
       phoneNumber,
+      username,
       profile,
       tagline
     );

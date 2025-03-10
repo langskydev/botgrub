@@ -456,6 +456,7 @@ async function startBot() {
 
   // Tambahkan event handler untuk welcome message ketika ada peserta baru masuk ke grup
   chiwa.ev.on("group-participants.update", async (update) => {
+    console.log(update);
     // Proses hanya untuk grup dengan ID yang telah disetting di environment
     if (update.id !== process.env.GROUP_ID) return;
     console.log("Received group-participants.update:", update);
