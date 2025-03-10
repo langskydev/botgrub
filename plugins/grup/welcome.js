@@ -46,7 +46,7 @@ async function createWelcomeImages(
   // 🔹 Text Group Name
   ctx.fillStyle = "black";
   ctx.font = "800 40px Arial";
-  ctx.fillText(groupName, 59, 155);
+  ctx.fillText(groupName.toUpperCase(), 59, 155);
 
   // 🔹 Text Count Member
   ctx.fillStyle = "black";
