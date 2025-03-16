@@ -48,6 +48,11 @@ module.exports = chiwa = async (chiwa, m, chatUpdate, messages, store) => {
       if (m.text.startsWith(".promote")) {
         require("./plugins/owner/promote")(chiwa, m);
       }
+
+      // Perintah promote (reply pesan yang ingin di promosi)
+      if (m.text.startsWith(".send_private")) {
+        require("./plugins/owner/send_private")(chiwa, m);
+      }
     }
   }
 
